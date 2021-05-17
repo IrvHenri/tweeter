@@ -80,9 +80,19 @@ header .header-avatar {
 }
 header .header-name {
   text-align: center;
+  color: #fff;
 }
 
+.last-name-accent {
+ font-weight: 400;
+}
 
 /* ----------- */
 /* ---Main Container---- */
 /* ----------- */
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  background:inherit
+}
