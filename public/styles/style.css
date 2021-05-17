@@ -71,7 +71,7 @@ header {
   position: relative;
   flex-direction: column;
   align-items: center;
-  height: 420px;
+  height: 400px;
   width: 100%;
   background: #a18b40;
   background-image: url("../images/asfalt-dark.png");
@@ -80,11 +80,11 @@ header {
 .header-avatar {
   display: flex;
   justify-content: center;
-  margin-top: 5.2em;
+  margin-top: 4.8em;
 }
 
 .header-avatar img {
-  width: 75%;
+  width: 70%;
 }
 
 .header-name {
@@ -111,34 +111,34 @@ main {
 /* ---FORM ---- */
 /* ----------- */
 
-.tweet-form{
+.new-tweet{
   display: flex;
   flex-direction: column;
   background-image: #F3F1ED;
   margin-top: 1em;
   border-radius: 5px;
 }
-.tweet-form h2 {
+.new-tweet h2 {
   padding-bottom: .5em;
 }
 
-.tweet-form h2, .tweet-form form {
+.new-tweet h2, .new-tweet form {
   margin: 0 auto;
   width: 90%;
 } 
 
 
-.tweet-form textarea {
+.new-tweet textarea {
   width: 100%;
   resize:none;
   border: none;
-  border-bottom: 4px solid #605C53 ;
+  border-bottom: 3px solid #605C53 ;
   background: inherit;
   font-weight: 600;
   color: #605C53 ;
 }
 
-.tweet-form textarea::placeholder {
+.new-tweet textarea::placeholder {
   font-weight: 600;
 }
 
