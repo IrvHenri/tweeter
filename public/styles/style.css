@@ -34,7 +34,7 @@ body {
 nav {
   display: flex;
   position: absolute;
-  height: 120px;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   background: #4056a1;
@@ -46,6 +46,7 @@ nav {
 
 nav span {
   font-family: "Bungee", cursive;
+  font-size: 2rem;
 }
 .fa-angle-double-down {
   position: absolute;
@@ -58,27 +59,35 @@ nav span {
   position: relative;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  font-size: 1.3rem;
 }
 
 /* ----------- */
 /* ---Header---- */
 /* ----------- */
+
 header {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
-  height: 500px;
+  height: 420px;
   width: 100%;
   background: #a18b40;
   background-image: url("../images/asfalt-dark.png");
 }
 
-header .header-avatar {
+.header-avatar {
+  display: flex;
+  justify-content: center;
   margin-top: 5.2em;
 }
-header .header-name {
+
+.header-avatar img {
+  width: 75%;
+}
+
+.header-name {
   text-align: center;
   color: #fff;
 }
@@ -95,4 +104,57 @@ main {
   width: 90%;
   margin: 0 auto;
   background:inherit
+}
+
+
+/* ----------- */
+/* ---FORM ---- */
+/* ----------- */
+
+.tweet-form{
+  display: flex;
+  flex-direction: column;
+  background-image: #F3F1ED;
+  margin-top: 1em;
+  border-radius: 5px;
+}
+.tweet-form h2 {
+  padding-bottom: .5em;
+}
+
+.tweet-form h2, .tweet-form form {
+  margin: 0 auto;
+  width: 90%;
+} 
+
+
+.tweet-form textarea {
+  width: 100%;
+  resize:none;
+  border: none;
+  border-bottom: 4px solid #605C53 ;
+  background: inherit;
+  font-weight: 600;
+  color: #605C53 ;
+}
+
+.tweet-form textarea::placeholder {
+  font-weight: 600;
+}
+
+.tweet-form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5em;
+}
+
+.tweet-form-footer button {
+  background: #4056a1;
+  font-family: "Bungee", cursive;
+  color: #fff;
+  border: none;
+  padding: .2em .5em;
+}
+.counter {
+  font-family: "Bungee", cursive;
 }
