@@ -66,7 +66,7 @@ nav span {
 /* ---Header---- */
 /* ----------- */
 
-header {
+.header-jumbo {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -93,7 +93,7 @@ header {
 }
 
 .last-name-accent {
- font-weight: 400;
+  font-weight: 400;
 }
 
 /* ----------- */
@@ -103,39 +103,37 @@ header {
 main {
   width: 90%;
   margin: 0 auto;
-  background:inherit
+  background: inherit;
 }
-
 
 /* ----------- */
 /* ---FORM ---- */
 /* ----------- */
 
-.new-tweet{
+.new-tweet {
   display: flex;
   flex-direction: column;
-  background-image: #F3F1ED;
-  margin-top: 1em;
-  border-radius: 5px;
+  background-image: #f3f1ed;
+  margin: 2em 0;
 }
 .new-tweet h2 {
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
-.new-tweet h2, .new-tweet form {
+.new-tweet h2,
+.new-tweet form {
   margin: 0 auto;
-  width: 90%;
-} 
-
+  width: 100%;
+}
 
 .new-tweet textarea {
   width: 100%;
-  resize:none;
+  resize: none;
   border: none;
-  border-bottom: 3px solid #605C53 ;
+  border-bottom: 3px solid #605c53;
   background: inherit;
   font-weight: 600;
-  color: #605C53 ;
+  color: inherit;
 }
 
 .new-tweet textarea::placeholder {
@@ -145,7 +143,7 @@ main {
 .tweet-form-footer {
   display: flex;
   justify-content: space-between;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .tweet-form-footer button {
@@ -153,8 +151,82 @@ main {
   font-family: "Bungee", cursive;
   color: #fff;
   border: none;
-  padding: .2em .5em;
+  padding: 0.2em 0.5em;
 }
 .counter {
   font-family: "Bungee", cursive;
+}
+
+/* ----------- */
+/* --- Tweets ---- */
+/* ----------- */
+
+.tweet {
+  border: 3px solid #605c53;
+  padding: .8em;
+}
+
+.tweet:hover {
+  box-shadow: 7px 7px #c9cae2;
+}
+
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.tweet header * {
+  margin: 0;
+}
+
+.tweet-profile-container {
+  display: flex;
+}
+
+.tweet-profile-container .avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 15%; 
+}
+
+.tweet-profile-container .avatar img {
+  width: 100%;
+}
+
+.tweet-profile-container p {
+  margin-left: .5em;
+}
+
+.tweet-handle {
+  color: #ccd1e4;
+}
+
+.tweet header + p {
+  padding: 1.2em 0;
+  border-bottom: 3px solid #605c53;
+}
+/* border bottom on tweet text */
+
+/* .tweet header + p::after {
+  content: '';
+  display: block;
+  background-color: #605C53 ;
+  width: 100%;
+  height: 3px;
+} */
+
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-action-icons * {
+  font-size: 0.8em;
+  margin-left: 0.5em;
+}
+.tweet-action-icons > :hover {
+  color: #cb9826;
+  cursor: pointer;
 }
