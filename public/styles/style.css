@@ -1,0 +1,88 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+/* ----------- */
+/* ----Navbar--- */
+/* ----------- -*/
+nav {
+  display: flex;
+  position: absolute;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+  background: #4056a1;
+  width: 100vw;
+  color: #fff;
+  padding: 0 1.5em;
+  z-index: 1;
+}
+
+nav span {
+  font-family: "Bungee", cursive;
+}
+.fa-angle-double-down {
+  position: absolute;
+  bottom: 0;
+  color: #d94132;
+}
+
+.nav-write-tweet {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------- */
+/* ---Header---- */
+/* ----------- */
+header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  background: #a18b40;
+  background-image: url("../images/asfalt-dark.png");
+}
+
+header .header-avatar {
+  margin-top: 5.2em;
+}
+header .header-name {
+  text-align: center;
+}
+
+
+/* ----------- */
+/* ---Main Container---- */
+/* ----------- */
