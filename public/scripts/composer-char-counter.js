@@ -1,16 +1,17 @@
 $(document).ready(function () {
-  //set counter text to 140 from Jquery
-  let charLimit = 140;
-  $(".counter").text(charLimit);
-
-    //Anonymous function
-  $("#tweet-text").on("input", function () {
-    // obtain textarea value by capture its object with 'this'
+ 
+  
+  function charCounter(){
+    let charLimit = 140;
     let charCount = this.value.length;
+    //Instead of explicitly find .counter we can traverse DOM tree to parent & find node sibling
+    let counter = $(this).parent().find('.counter')
     let charactersRemaining = charLimit - charCount;
     if (charactersRemaining < 0) {
-      $(".counter").css("color", "red");
+      $(counter).css("color", "red");
     }
-    $(".counter").text(charactersRemaining);
-  });
+    $(counter).text(charactersRemaining);
+  }
+  
+  $("#tweet-text").on("input",charCounter);
 });
