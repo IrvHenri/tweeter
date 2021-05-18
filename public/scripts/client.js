@@ -4,41 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants",
-      },
-      created_at: 1621194582200,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense , donc je suis",
-      },
-      created_at: 1621280982200,
-    },
-  ];
+  // Post Request
 
-  //SUBMIT FORM
-  //add event listener for submit
   $("form").submit((e) => {
     //prevent default form behaviour
     e.preventDefault();
+    //serialize data for server
     let queryString = $("form").serialize();
     $.post("/tweets", queryString);
   });
-
-  //create AJAX POST request to /tweets endpoint
 
   const createTweetElement = (tweet) => {
     const { name, avatars, handle } = tweet.user;
@@ -72,5 +46,9 @@ $(document).ready(function () {
     });
   };
 
-  renderTweets(data);
+  const loadTweets = () => {
+    $.ajax("/tweets").then(renderTweets);
+  };
+
+  loadTweets();
 });
