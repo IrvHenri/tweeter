@@ -207,7 +207,9 @@ main {
   margin-left: 0.5em;
 }
 
+/* FIX user handles don't line up */
 .tweet-handle {
+  text-align: left;
   color: #ccd1e4;
 }
 

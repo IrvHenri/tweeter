@@ -29,6 +29,17 @@ $(document).ready(function () {
     },
   ];
 
+  //SUBMIT FORM
+  //add event listener for submit
+  $("form").submit((e) => {
+    //prevent default form behaviour
+    e.preventDefault();
+    let queryString = $("form").serialize();
+    $.post("/tweets", queryString);
+  });
+
+  //create AJAX POST request to /tweets endpoint
+
   const createTweetElement = (tweet) => {
     const { name, avatars, handle } = tweet.user;
     const { text } = tweet.content;
