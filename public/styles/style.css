@@ -156,6 +156,9 @@ main {
   border: none;
   padding: 0.2em 0.5em;
 }
+.tweet-form-footer button:hover {
+  cursor: pointer;
+}
 .counter {
   font-family: "Bungee", cursive;
 }
