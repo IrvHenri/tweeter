@@ -5,6 +5,11 @@
  */
 $(document).ready(function () {
   // Post Request
+  const loadTweets = () => {
+    $.ajax("/tweets").then(renderTweets);
+  };
+
+  //FIX
 
   $("form").submit((e) => {
     //prevent default form behaviour
@@ -12,6 +17,9 @@ $(document).ready(function () {
     //serialize data for server
     let queryString = $("form").serialize();
     $.post("/tweets", queryString);
+    $("form").trigger("reset");
+    $(".counter").text(140);
+    loadTweets();
   });
 
   const createTweetElement = (tweet) => {
@@ -44,10 +52,6 @@ $(document).ready(function () {
     tweets.forEach((tweet) => {
       $(".tweets-container").prepend(createTweetElement(tweet));
     });
-  };
-
-  const loadTweets = () => {
-    $.ajax("/tweets").then(renderTweets);
   };
 
   loadTweets();
