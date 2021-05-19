@@ -5,6 +5,11 @@
  */
 
 $(document).ready(function () {
+  // Clear error message on user input
+  $("form").on("input", () => {
+    $(".error-message").slideUp();
+  });
+
   // Tweet validator function - will return customized error message
   const tweetValidator = (text) => {
     let errorMessage = "";
@@ -12,15 +17,10 @@ $(document).ready(function () {
       errorMessage = "🚫 Tweet is empty! 🚫";
     }
     if (text.length > 140) {
-      errorMessage = "🚫 Tweet is too long! 🚫";
+      errorMessage = "🚫 Tweet is longer than 140 characters! 🚫";
     }
     return errorMessage;
   };
-
-  // Clear error message on user input
-  $("form").on("input", () => {
-    $(".error-message").slideUp();
-  });
 
   // POST tweet on form submission
   $("form").submit((e) => {
@@ -32,7 +32,6 @@ $(document).ready(function () {
     let errorMessage = tweetValidator(tweetText);
     if (errorMessage) {
       $(".error-message").text(errorMessage);
-      $(".error-message").css("border", "3px solid red");
       $(".error-message").slideDown();
       return;
     }

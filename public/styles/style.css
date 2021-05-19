@@ -177,6 +177,7 @@ main {
   color: red;
   font-size: 1em;
   font-weight: 600;
+  border: 3px solid red;
 }
 
 /* ----------- */
@@ -226,7 +227,6 @@ main {
   margin-left: 0.5em;
 }
 
-/* FIX user handles don't line up */
 .tweet-handle {
   text-align: left;
   color: #cacee6;
@@ -235,6 +235,7 @@ main {
 .tweet header + p {
   padding: 1.2em 0.5em;
   font-weight: 600;
+  overflow-wrap: break-word;
   border-bottom: 3px solid #605c53;
 }
 
