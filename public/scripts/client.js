@@ -3,13 +3,10 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function () {
-  //Form toggle Event handler
-  $(".nav-write-tweet").click(() => {
-    $(".new-tweet").toggle("slow");
-    $("textarea").focus();
-  });
 
+// * check TIME AGO DATES
+
+$(document).ready(function () {
   // Tweet validator function - will return customized error message
   const tweetValidator = (text) => {
     let errorMessage = "";

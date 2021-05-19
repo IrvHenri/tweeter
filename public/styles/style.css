@@ -257,3 +257,28 @@ main {
   color: #cb9826;
   cursor: pointer;
 }
+
+/* Scroll to top  Button */
+
+.jump-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  background: #ff0000;
+  color: #fff;
+  border: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: 200ms ease-in;
+}
+.jump-btn:hover {
+  background: #ff00009c;
+  cursor: pointer;
+}
+
+.jump-btn i {
+  font-size: 1.2em;
+}
