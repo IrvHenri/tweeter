@@ -20,9 +20,32 @@ $(document).ready(() => {
     $(document).scrollTop(0);
   };
 
-  //Form toggle Event handler
+  //Form toggle event handler
   $(".nav-write-tweet").click(() => {
     $(".new-tweet").toggle("slow");
     $("textarea").focus();
+  });
+
+  // Animate form toggle
+
+  const animateArrow = () => {
+    $(".fa-angle-double-down")
+      .animate(
+        {
+          marginBottom: "-=5px",
+        },
+        800
+      )
+      .animate(
+        {
+          marginBottom: "+=5px",
+        },
+        800
+      );
+    setInterval(animateArrow(), 1600);
+  };
+
+  $(function () {
+    setInterval(animateArrow());
   });
 });

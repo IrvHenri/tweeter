@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// * check TIME AGO DATES
-
 $(document).ready(function () {
   // Tweet validator function - will return customized error message
   const tweetValidator = (text) => {
@@ -47,13 +45,14 @@ $(document).ready(function () {
     });
   });
 
-  //XSS prevention function
+  // XSS prevention function
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Create Tweet function
   const createTweetElement = (tweet) => {
     const { name, avatars, handle } = tweet.user;
     const { text } = tweet.content;
@@ -83,12 +82,14 @@ $(document).ready(function () {
     return $tweet;
   };
 
+  // Render tweets function
   const renderTweets = (tweets) => {
     tweets.forEach((tweet) => {
       $(".tweets-container").prepend(createTweetElement(tweet));
     });
   };
 
+  // Load tweets function
   const loadTweets = () => {
     $.ajax("/tweets")
       .then(renderTweets)

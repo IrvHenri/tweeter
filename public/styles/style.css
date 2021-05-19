@@ -64,6 +64,8 @@ nav span {
 }
 
 .fa-angle-double-down {
+  bottom: 17%;
+  position: absolute;
   color: #d94132;
 }
 
