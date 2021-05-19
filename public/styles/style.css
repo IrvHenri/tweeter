@@ -40,7 +40,7 @@ nav {
   height: 100px;
   justify-content: space-between;
   align-items: center;
-  background: #4056a1;
+  background: transparent;
   width: 100vw;
   color: #fff;
   padding: 0 1.5em;
@@ -285,4 +285,45 @@ main {
 
 .jump-btn i {
   font-size: 1.2em;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+  nav {
+    position: static;
+    background: #4056a1 !important;
+  }
+  .content-wrapper {
+    display: flex;
+    max-width: 1024px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .header-jumbo {
+    align-self: flex-start;
+    max-width: 450px;
+    margin-top: 2.3em;
+    width: 35%;
+  }
+  .fa-angle-double-down {
+    bottom: 91%;
+  }
+  .container {
+    position: relative;
+    width: 50%;
+    margin: 0;
+  }
+
+  .error-message {
+    position: absolute;
+    font-size: 0.7em;
+    top: 15%;
+    left: 23%;
+    width: 35%;
+    margin: 0;
+    text-align: center;
+  }
 }

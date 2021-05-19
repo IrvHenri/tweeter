@@ -3,8 +3,10 @@ $(document).ready(() => {
   const scrollFunction = () => {
     if ($(document).scrollTop() > 20) {
       $(".jump-btn").show();
+      $("nav").css("background", "#4056a1");
     } else {
       $(".jump-btn").hide();
+      $("nav").css("background", "transparent");
     }
   };
 

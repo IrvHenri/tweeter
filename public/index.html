@@ -50,37 +50,43 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-    <header class="header-jumbo">
-      <div class="header-avatar">
-        <img src="/images/profile-hex.png" />
-      </div>
+    <div class="content-wrapper">
+      <header class="header-jumbo">
+        <div class="header-avatar">
+          <img src="/images/profile-hex.png" />
+        </div>
 
-      <div class="header-name">
-        <h2>Janine <span class="last-name-accent">Blanco</span></h2>
-      </div>
-    </header>
-    <h2 class="error-message"></h2>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
-          <textarea
-            name="text"
-            id="tweet-text"
-            placeholder="What are you humming about?"
-          ></textarea>
+        <div class="header-name">
+          <h2>Janine <span class="last-name-accent">Blanco</span></h2>
+        </div>
+      </header>
 
-          <div class="tweet-form-footer">
-            <button type="submit">Tweet</button>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <h2 class="error-message"></h2>
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form method="POST" action="/tweets">
+            <textarea
+              name="text"
+              id="tweet-text"
+              placeholder="What are you humming about?"
+            ></textarea>
 
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
+            <div class="tweet-form-footer">
+              <button type="submit">Tweet</button>
 
-      <section class="tweets-container"></section>
-    </main>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+
+        <section class="tweets-container"></section>
+      </main>
+    </div>
+
     <button class="jump-btn"><i class="fas fa-angle-double-up"></i></button>
   </body>
 </html>
