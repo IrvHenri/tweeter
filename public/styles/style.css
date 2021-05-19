@@ -220,29 +220,24 @@ main {
 /* FIX user handles don't line up */
 .tweet-handle {
   text-align: left;
-  color: #ccd1e4;
+  color: #cacfe8;
 }
 
 .tweet header + p {
-  padding: 1.2em 0;
+  padding: 1.2em 0.5em;
+  font-weight: 600;
   border-bottom: 3px solid #605c53;
 }
-
-/* border bottom on tweet text */
-
-/* .tweet header + p::after {
-  content: '';
-  display: block;
-  border: 2px solid #605c53;
-  width: 97%;
-  position: absolute;
- 
-} */
 
 .tweet-footer {
   display: flex;
   justify-content: space-between;
   font-size: 0.8em;
+  padding: 0 0.5em;
+}
+
+.tweet-timestamp {
+  font-weight: 600;
 }
 
 .tweet-action-icons * {

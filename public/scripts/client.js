@@ -29,12 +29,14 @@ $(document).ready(function () {
 
   $("form").submit((e) => {
     e.preventDefault();
+
     let tweetText = $("textarea").val();
 
     if (tweetValidator(tweetText)) {
       return;
     }
     let queryString = $("form").serialize();
+    console.log(queryString);
     $.post("/tweets", queryString, () => {
       $("form").trigger("reset");
       $(".counter").text(140);
@@ -43,10 +45,18 @@ $(document).ready(function () {
     });
   });
 
+  //XSS prevention function
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (tweet) => {
     const { name, avatars, handle } = tweet.user;
     const { text } = tweet.content;
-    let createdAt = tweet.created_at;
+    const safeText = escape(text);
+    const createdAt = tweet.created_at;
     const $tweet = $(`<article class="tweet">
     <header class="tweet-header">
       <div class="tweet-profile-container">
@@ -57,7 +67,7 @@ $(document).ready(function () {
       </div>
       <p class="tweet-handle">${handle}</p>
     </header>
-    <p>${text}</p>
+    <p>${safeText}</p>
     <footer class="tweet-footer">
       <small class="tweet-timestamp">${timeago.format(createdAt)}</small>
       <div class="tweet-action-icons">
