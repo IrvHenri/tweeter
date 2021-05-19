@@ -148,6 +148,10 @@ main {
   justify-content: space-between;
   margin-top: 0.5em;
 }
+.tweet-form-footer div {
+  display: flex;
+  align-items: center;
+}
 
 .tweet-form-footer button {
   background: #4056a1;

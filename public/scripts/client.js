@@ -6,7 +6,9 @@
 $(document).ready(function () {
   // Post Request
   const loadTweets = () => {
-    $.ajax("/tweets").then(renderTweets);
+    $.ajax("/tweets")
+      .then(renderTweets)
+      .catch((err) => alert(err));
   };
 
   // Tweet validator function
@@ -22,21 +24,23 @@ $(document).ready(function () {
 
   // clear alert message on input
   $("form").on("input", () => {
-    $(".error-message").empty();
+    $(".error-message").empty().fadeOut();
   });
 
   $("form").submit((e) => {
     e.preventDefault();
     let tweetText = $("textarea").val();
+
     if (tweetValidator(tweetText)) {
       return;
     }
     let queryString = $("form").serialize();
-    $.post("/tweets", queryString);
-    $("form").trigger("reset");
-    $(".counter").text(140);
-    $(".error-message").empty();
-    loadTweets();
+    $.post("/tweets", queryString, () => {
+      $("form").trigger("reset");
+      $(".counter").text(140);
+      $(".error-message").empty();
+      loadTweets();
+    });
   });
 
   const createTweetElement = (tweet) => {
