@@ -37,11 +37,14 @@ $(document).ready(function () {
     }
     // POST request - serialize form data to send to server
     let queryString = $("form").serialize();
-    $.post("/tweets", queryString, () => {
-      $("form").trigger("reset");
-      $(".counter").text(140);
-      loadTweets();
-    });
+
+    $.post("/tweets", queryString)
+      .then(() => {
+        $("form").trigger("reset");
+        $(".counter").text(140);
+        loadTweets();
+      })
+      .catch((err) => console.log(err));
   });
 
   // XSS prevention function
