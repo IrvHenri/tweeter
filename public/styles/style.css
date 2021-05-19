@@ -163,6 +163,12 @@ main {
   font-family: "Bungee", cursive;
 }
 
+.error-message {
+  color: red;
+  margin-left: 1em;
+  font-size: 0.7em;
+  font-weight: 600;
+}
 /* ----------- */
 /* --- Tweets ---- */
 /* ----------- */

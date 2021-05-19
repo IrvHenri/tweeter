@@ -9,16 +9,33 @@ $(document).ready(function () {
     $.ajax("/tweets").then(renderTweets);
   };
 
-  //FIX
+  // Tweet validator function
+  const tweetValidator = (text) => {
+    if (text === "") {
+      return $(".error-message").text("Tweet is empty!");
+    }
+    if (text.length > 140) {
+      return $(".error-message").text("Tweet is too long!");
+    }
+    return false;
+  };
+
+  // clear alert message on input
+  $("form").on("input", () => {
+    $(".error-message").empty();
+  });
 
   $("form").submit((e) => {
-    //prevent default form behaviour
     e.preventDefault();
-    //serialize data for server
+    let tweetText = $("textarea").val();
+    if (tweetValidator(tweetText)) {
+      return;
+    }
     let queryString = $("form").serialize();
     $.post("/tweets", queryString);
     $("form").trigger("reset");
     $(".counter").text(140);
+    $(".error-message").empty();
     loadTweets();
   });
 

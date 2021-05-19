@@ -71,11 +71,14 @@
           ></textarea>
 
           <div class="tweet-form-footer">
-            <button type="submit">Tweet</button>
+            <div>
+              <button type="submit">Tweet</button
+              ><small class="error-message"></small>
+            </div>
+
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-        <small class="error-message"></small>
       </section>
 
       <section class="tweets-container"></section>
