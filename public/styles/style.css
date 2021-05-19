@@ -148,10 +148,6 @@ main {
   justify-content: space-between;
   margin-top: 0.5em;
 }
-.tweet-form-footer div {
-  display: flex;
-  align-items: center;
-}
 
 .tweet-form-footer button {
   background: #4056a1;
@@ -168,9 +164,13 @@ main {
 }
 
 .error-message {
+  display: none;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.5em;
+  margin-top: 1em;
   color: red;
-  margin-left: 1em;
-  font-size: 0.7em;
+  font-size: 1em;
   font-weight: 600;
 }
 /* ----------- */

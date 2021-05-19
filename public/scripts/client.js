@@ -12,27 +12,32 @@ $(document).ready(function () {
   };
 
   // Tweet validator function
+
   const tweetValidator = (text) => {
+    let errorMessage = "";
     if (text === "") {
-      return $(".error-message").text("Tweet is empty!");
+      errorMessage = "🚫 Tweet is empty! ";
     }
     if (text.length > 140) {
-      return $(".error-message").text("Tweet is too long!");
+      errorMessage = "🚫 Tweet is too long!";
     }
-    return false;
+    return errorMessage;
   };
 
   // clear alert message on input
   $("form").on("input", () => {
-    $(".error-message").empty().fadeOut();
+    $(".error-message").slideUp();
   });
 
   $("form").submit((e) => {
     e.preventDefault();
 
     let tweetText = $("textarea").val();
-
-    if (tweetValidator(tweetText)) {
+    let errorMessage = tweetValidator(tweetText);
+    if (errorMessage) {
+      $(".error-message").text(errorMessage);
+      $(".error-message").css("border", "3px solid red");
+      $(".error-message").slideDown();
       return;
     }
     let queryString = $("form").serialize();
