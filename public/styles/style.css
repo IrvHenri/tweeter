@@ -10,6 +10,8 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -50,18 +52,19 @@ nav span {
   font-family: "Bungee", cursive;
   font-size: 2rem;
 }
-.fa-angle-double-down {
-  position: absolute;
-  bottom: 0;
-  color: #d94132;
-}
 
 .nav-write-tweet {
   display: flex;
-  position: relative;
   flex-direction: column;
   align-items: center;
   font-size: 1.3rem;
+}
+.nav-write-tweet:hover {
+  cursor: pointer;
+}
+
+.fa-angle-double-down {
+  color: #d94132;
 }
 
 /* ----------- */
@@ -116,7 +119,7 @@ main {
   display: flex;
   flex-direction: column;
   background-image: #f3f1ed;
-  margin: 3em 0;
+  margin: 2em 0;
 }
 .new-tweet h2 {
   padding-bottom: 0.5em;
@@ -173,9 +176,13 @@ main {
   font-size: 1em;
   font-weight: 600;
 }
+
 /* ----------- */
 /* --- Tweets ---- */
 /* ----------- */
+.tweets-container {
+  margin-top: 2em;
+}
 
 .tweet {
   border: 3px solid #605c53;
@@ -220,7 +227,7 @@ main {
 /* FIX user handles don't line up */
 .tweet-handle {
   text-align: left;
-  color: #cacfe8;
+  color: #cacee6;
 }
 
 .tweet header + p {
@@ -234,6 +241,7 @@ main {
   justify-content: space-between;
   font-size: 0.8em;
   padding: 0 0.5em;
+  padding-top: 0.5em;
 }
 
 .tweet-timestamp {
