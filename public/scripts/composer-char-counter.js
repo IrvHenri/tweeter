@@ -7,6 +7,8 @@ $(document).ready(function () {
     let charactersRemaining = charLimit - charCount;
     if (charactersRemaining < 0) {
       $(counter).css("color", "red");
+    } else {
+      $(counter).css("color", "#545149");
     }
     $(counter).text(charactersRemaining);
   }

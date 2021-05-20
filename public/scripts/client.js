@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
   // Clear error message on user input
   $("form").on("input", () => {
     $(".error-message").slideUp();
@@ -38,6 +38,7 @@ $(document).ready(function () {
     // POST request - serialize form data to send to server
     let queryString = $("form").serialize();
 
+    // JQuery.post(): Ajax > Shorthand method per JQuery documentation
     $.post("/tweets", queryString)
       .then(() => {
         $("form").trigger("reset");
@@ -48,7 +49,7 @@ $(document).ready(function () {
   });
 
   // XSS prevention function
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;

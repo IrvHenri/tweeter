@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  // Window scroll down to display jump button
+  // Function to display jump button
   const scrollFunction = () => {
     if ($(document).scrollTop() > 20) {
       $(".jump-btn").show();
