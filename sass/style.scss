@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -18,9 +17,11 @@ html {
 /*
  * Global layout stuff
  */
+$main-background-color: #f4f1ec;
+
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: $main-background-color;
   font-size: 1rem;
   font-family: "Source Sans Pro", sans-serif;
   width: 100vw;
@@ -29,9 +30,11 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 /* ----------- */
 /* ----Typography--- */
 /* ----------- -*/
+
 h2 {
   font-size: 1.8rem;
 }
@@ -55,10 +58,11 @@ nav {
   padding: 0 2em;
   z-index: 1;
   transition: top 0.3s;
-}
-nav span {
-  font-family: "Bungee", cursive;
-  font-size: 2rem;
+
+  span {
+    font-family: "Bungee", cursive;
+    font-size: 2rem;
+  }
 }
 
 .nav-write-tweet {
@@ -67,10 +71,10 @@ nav span {
   align-items: center;
   font-size: 1.3rem;
   transition: 150ms ease-in-out;
-}
-.nav-write-tweet:hover {
-  cursor: pointer;
-  color: #cacaca;
+  &:hover {
+    cursor: pointer;
+    color: rgb(202, 202, 202);
+  }
 }
 
 .fa-angle-double-down {
@@ -78,19 +82,22 @@ nav span {
   position: absolute;
   color: #d94132;
   animation: arrowAnimation 1s linear infinite;
-}
-@keyframes arrowAnimation {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
+
+  @keyframes arrowAnimation {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
   }
 }
 
 /* ----------- */
 /* ---Header---- */
 /* ----------- */
+
 .header-jumbo {
   display: flex;
   position: relative;
@@ -106,9 +113,10 @@ nav span {
   display: flex;
   justify-content: center;
   margin-top: 4.8em;
-}
-.header-avatar img {
-  width: 70%;
+
+  img {
+    width: 70%;
+  }
 }
 
 .header-name {
@@ -124,6 +132,7 @@ nav span {
 /* ----------- */
 /* ---Main Container---- */
 /* ----------- */
+
 main {
   width: 90%;
   margin: 0 auto;
@@ -134,28 +143,32 @@ main {
 /* ----------- */
 /* ---FORM ---- */
 /* ----------- */
+
 .new-tweet {
   display: flex;
   flex-direction: column;
   background-image: #f3f1ed;
   margin-top: 2em;
-}
-.new-tweet h2 {
-  padding-bottom: 0.5em;
-}
-.new-tweet textarea {
-  background: inherit;
-  width: 100%;
-  resize: none;
-  border: none;
-  border-bottom: 3px solid #605c53;
-  outline: 0;
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: inherit;
-}
-.new-tweet textarea::placeholder {
-  font-weight: 600;
+
+  h2 {
+    padding-bottom: 0.5em;
+  }
+
+  textarea {
+    background: inherit;
+    width: 100%;
+    resize: none;
+    border: none;
+    border-bottom: 3px solid #605c53;
+    outline: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: inherit;
+
+    &::placeholder {
+      font-weight: 600;
+    }
+  }
 }
 
 .tweet-form-footer {
@@ -163,22 +176,23 @@ main {
   justify-content: space-between;
   margin-top: 0.5em;
   font-size: 1.2rem;
-}
-.tweet-form-footer button {
-  background: #4056a1;
-  font-family: "Bungee", cursive;
-  color: #fff;
-  border: none;
-  padding: 0.2em 0.5em;
-  transition: 150ms ease-in-out;
-}
-.tweet-form-footer button:hover {
-  cursor: pointer;
-  background: #374a8a;
-  color: #d1d1d1;
-}
-.tweet-form-footer .counter {
-  font-family: "Bungee", cursive;
+  button {
+    background: #4056a1;
+    font-family: "Bungee", cursive;
+    color: #fff;
+    border: none;
+    padding: 0.2em 0.5em;
+    transition: 150ms ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background: #374a8a;
+      color: rgb(209, 209, 209);
+    }
+  }
+
+  .counter {
+    font-family: "Bungee", cursive;
+  }
 }
 
 .error-message {
@@ -204,9 +218,9 @@ main {
   padding: 1.2em;
   margin-bottom: 1em;
   transition: 150ms ease-in-out;
-}
-.tweet:hover {
-  box-shadow: 7px 7px #c9cae2;
+  &:hover {
+    box-shadow: 7px 7px #c9cae2;
+  }
 }
 
 .tweet-header {
@@ -219,19 +233,19 @@ main {
 .tweet-profile-container {
   display: flex;
   align-items: center;
-}
-.tweet-profile-container .avatar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 45px;
-}
-.tweet-profile-container .avatar img {
-  width: 100%;
-  height: auto;
-}
-.tweet-profile-container p {
-  margin-left: 0.5em;
+  .avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  p {
+    margin-left: 0.5em;
+  }
 }
 
 .tweet-handle {
@@ -260,13 +274,14 @@ main {
   font-size: 1em;
   margin-left: 0.7em;
   transition: 150ms ease-in-out;
-}
-.tweet-action-icons *:hover {
-  color: #cb9826;
-  cursor: pointer;
+  &:hover {
+    color: #cb9826;
+    cursor: pointer;
+  }
 }
 
 /* Scroll to top  Button */
+
 .jump-btn {
   display: none;
   position: fixed;
@@ -280,16 +295,18 @@ main {
   height: 70px;
   border-radius: 50%;
   transition: 200ms ease-in;
-}
-.jump-btn:hover {
-  background: #ff00009c;
-  cursor: pointer;
-}
-.jump-btn i {
-  font-size: 2em;
+
+  &:hover {
+    background: #ff00009c;
+    cursor: pointer;
+  }
+  i {
+    font-size: 2em;
+  }
 }
 
 /* Media queries */
+
 @media (min-width: 768px) {
   h2 {
     font-size: 2rem;
@@ -298,15 +315,13 @@ main {
   p {
     font-size: 1.5rem;
   }
-
   nav {
     position: fixed;
     background: #4056a1 !important;
+    span {
+      font-size: 2.5rem;
+    }
   }
-  nav span {
-    font-size: 2.5rem;
-  }
-
   .content-wrapper {
     display: flex;
     max-width: 1024px;
@@ -323,21 +338,17 @@ main {
     margin-top: 2.3em;
     width: 35%;
   }
-
   .header-avatar {
     margin: 0;
   }
-
   .fa-angle-double-down {
     bottom: 14%;
   }
-
   .container {
     position: relative;
     width: 50%;
     margin: 0;
   }
-
   .tweets-container {
     margin-top: 2.2rem;
   }
