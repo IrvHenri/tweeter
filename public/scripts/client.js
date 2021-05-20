@@ -14,10 +14,10 @@ $(document).ready(function () {
   const tweetValidator = (text) => {
     let errorMessage = "";
     if (text === "") {
-      errorMessage = "🚫 Tweet is empty! 🚫";
+      errorMessage = "Tweet is empty! 🚫";
     }
     if (text.length > 140) {
-      errorMessage = "🚫 Tweet is longer than 140 characters! 🚫";
+      errorMessage = "Tweet is longer than 140 characters! 🚫";
     }
     return errorMessage;
   };

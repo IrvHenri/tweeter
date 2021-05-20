@@ -64,7 +64,7 @@ nav span {
 }
 
 .fa-angle-double-down {
-  bottom: 17%;
+  bottom: 14%;
   position: absolute;
   color: #d94132;
   animation: arrowAnimation 1s linear infinite;
@@ -76,7 +76,7 @@ nav span {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 }
 
@@ -123,6 +123,7 @@ main {
   width: 90%;
   margin: 0 auto;
   background: inherit;
+  padding: 0 0.5em;
 }
 
 /* ----------- */
@@ -308,7 +309,7 @@ main {
   .content-wrapper {
     display: flex;
     max-width: 1024px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     margin: 0 auto;
     padding-top: 5em;
@@ -337,7 +338,7 @@ main {
     position: absolute;
     font-size: 0.7em;
     top: 24%;
-    left: 25%;
+    left: 29%;
     width: 38%;
     margin: 0;
     text-align: center;
