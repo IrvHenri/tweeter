@@ -335,12 +335,9 @@ main {
   }
 
   .error-message {
-    position: absolute;
     font-size: 0.7em;
-    top: 24%;
-    left: 29%;
-    width: 38%;
+    width: fit-content;
     margin: 0;
-    text-align: center;
+    text-align: left;
   }
 }
